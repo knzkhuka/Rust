@@ -1,0 +1,13 @@
+FROM rust:1.5
+
+WORKDIR /todo
+
+COPY Cargo.toml Cargo.toml
+COPY ./src ./src
+COPY ./templates ./template
+
+RUN cargo build --release
+
+RUN cargo install --path .
+
+CMD ["todo"]
