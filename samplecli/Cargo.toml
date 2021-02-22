@@ -1,5 +1,5 @@
 [package]
-name = "samplecli"
+name = "rpncalc"
 version = "0.1.0"
 authors = ["knzkhuka <one235813@gmail.com>"]
 edition = "2018"
@@ -7,4 +7,6 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+anyhow = "1.0.38"
 clap = "3.0.0-beta.1"
+thiserror = "1.0.24"
