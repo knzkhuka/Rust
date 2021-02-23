@@ -42,7 +42,7 @@ impl ResponseError for MyError {}
 async fn index(db: web::Data<Pool<SqliteConnectionManager>>) -> Result<HttpResponse, MyError> {
     let conn = db.get()?;
     let mut statement = conn.prepare("SELECT id,text FROM todo")?;
-    let rows = statement.query_map(params![], |row| {
+    let rows = statement.query_map(params![], |row| -> Result<TodoEntry, rusqlite::Error> {
         let id = row.get(0)?;
         let text = row.get(1)?;
         Ok(TodoEntry { id, text })
