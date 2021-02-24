@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>knzk bbs</title>
+</head>
+
+<body>
+    <div>
+        {% for entry in entries %}
+        <div>
+            {{entry.id}}
+            <br>
+            {{entry.text}}
+            <br>
+        </div>
+        {% endfor %}
+    </div>
+
+    <form action="/add" method="POST">
+        <div>
+            <input name="text">
+        </div>
+        <div>
+            <button>post</button>
+        </div>
+    </form>
+</body>
+
+</html>
