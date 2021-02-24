@@ -99,7 +99,6 @@ async fn main() -> Result<(), actix_web::Error> {
 
     std::env::set_var("RUST_LOG", "actix_web=info");
     env_logger::init();
-    let endpoint = "127.0.0.1:8080";
     let port = env::var("PORT")
         .unwrap_or_else(|_| "3000".to_string())
         .parse()
